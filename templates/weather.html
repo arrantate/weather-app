@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="{{ url_for('static', filename='styles/weather.css') }}" rel="stylesheet">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="vertical-center">
+            {% if weather %}
+            <h1 class="heading">{{ weather.city }}, {{ weather.country }}</h1>
+            <p class="info">{{ weather.description }}</p>
+            <p class="info">Temperature: {{ weather.temp }} ({{ weather.temp_min }} - {{ weather.temp_max }})</p>
+            {% endif %}
+            <p class="lead">
+            <form action="" method="post">
+                <p>
+                    <input class="input-text" type="text" name="city" placeholder="Enter city here">
+                
+                    <input class="btn" type="submit" value="Search">
+                </p>
+            </form>
+            {% if message %}
+            <p class="info">{{ message }}</p>
+            {% endif %}
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
