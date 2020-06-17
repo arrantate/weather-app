@@ -4,7 +4,7 @@ import wikipedia
 
 class Weather_API():
     def __init__(self, city):
-        api_key = "b42f54e6e9d72bb93bf01757428e2325"
+        api_key = ""
         full_url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
         response = requests.get(full_url)
         response = response.json()
